@@ -1,0 +1,22 @@
+TUCKER_INSTALL=/Users/aj/.local
+cmake                                              \
+  -D BUILD_SHARED_LIBS=ON                          \
+  -D CMAKE_BUILD_TYPE=RELEASE                      \
+  -D ROL_ENABLE_EXAMPLES=ON                        \
+  -D ROL_ENABLE_TESTS=OFF                          \
+  -D TPL_ENABLE_BLAS=ON                            \
+  -D TPL_ENABLE_LAPACK=ON                          \
+  -D TPL_ENABLE_MPI=OFF                            \
+  -D TPL_ENABLE_gtest=OFF                          \
+  -D TPL_ENABLE_TuckerSerial=ON                    \
+  -D Trilinos_ENABLE_ALL_OPTIONAL_PACKAGES=ON      \
+  -D Trilinos_ENABLE_EXAMPLES=OFF                  \
+  -D Trilinos_ENABLE_EXPLICIT_INSTANTIATION=ON     \
+  -D Trilinos_ENABLE_Intrepid=ON                   \
+  -D Trilinos_ENABLE_ROL=ON                        \
+  -D Trilinos_ENABLE_TESTS=OFF                     \
+  -D Tucker_DIR="$TUCKER_INSTALL/lib/cmake/Tucker" \
+  -D TPL_BLAS_LIBRARIES="/opt/homebrew/opt/openblas/lib/libopenblas.dylib" \
+  -D TPL_LAPACK_LIBRARIES="/opt/homebrew/opt/openblas/lib/libopenblas.dylib" \
+  -B build                                         \
+  -S .
